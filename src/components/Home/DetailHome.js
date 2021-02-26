@@ -1,11 +1,21 @@
 import React from 'react'
 import { View, Text ,SafeAreaView,Image,Dimensions,TouchableOpacity, ScrollView  } from 'react-native'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faAngleLeft} from '@fortawesome/free-solid-svg-icons'
+import { faAngleLeft ,faPhone ,faEnvelope ,faChalkboardTeacher} from '@fortawesome/free-solid-svg-icons'
+import {Linking} from 'react-native'
 const width = Dimensions.get('window').width/384
 const height = Dimensions.get('window').height/781.3333333333334
 const DetailHome = ({navigation}) => {
     console.log(width,height);
+    const callPhone = ()=>{
+        Linking.openURL(`tel:0854658721`)
+    }
+    const callMail = ()=>{
+        Linking.openURL(`mailto:administrator@sut.ac.th`)
+    }
+    const LineOpen = () =>{
+        Linking.openURL("http://line.me/ti/p/~@suthnews")
+    }
     return (
         <SafeAreaView style={{flex:1,backgroundColor:'#edf0ee'}}>
             <TouchableOpacity style={{flexDirection:'row',marginTop:10*height,alignItems:'center',marginBottom:10*height}} onPress={()=>navigation.goBack()}>
@@ -62,7 +72,16 @@ const DetailHome = ({navigation}) => {
                 </View>
 
             </ScrollView>
-            <View style={{width:"100%",height:60*height,backgroundColor:'red'}}>
+            <View style={{width:"100%",height:80*height,backgroundColor:'rgba(0,0,0,0)',flexDirection:'row',justifyContent:'flex-end'}}>
+                <TouchableOpacity style={{width:width*60,height:width*60,backgroundColor:'white',margin:10,borderRadius:999,alignItems:'center',justifyContent:'center'}} onPress={callPhone}>
+                    <FontAwesomeIcon icon={faPhone} size={40*height} color="#892b64"/>
+                </TouchableOpacity>
+                <TouchableOpacity style={{width:width*60,height:width*60,backgroundColor:'white',margin:10,borderRadius:999,alignItems:'center',justifyContent:'center'}} onPress={callMail}>
+                    <FontAwesomeIcon icon={faEnvelope} size={40*height} color="#455e89"/>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={LineOpen} style={{width:width*60,height:width*60,backgroundColor:'white',margin:10,borderRadius:999,alignItems:'center',justifyContent:'center'}}>
+                    <FontAwesomeIcon icon={faChalkboardTeacher} size={40*height} color="#84a98c"/>
+                </TouchableOpacity>
 
             </View>
         </SafeAreaView>
