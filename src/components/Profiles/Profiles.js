@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text ,Button, Dimensions, Image, ImageBackground, KeyboardAvoidingView} from 'react-native'
+import { View, Text ,Button, Dimensions, Image, ImageBackground, KeyboardAvoidingView, TouchableOpacity} from 'react-native'
 import { FlatList, ScrollView, TextInput } from 'react-native-gesture-handler'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faSignOutAlt} from '@fortawesome/free-solid-svg-icons'
@@ -23,11 +23,11 @@ const Profile = ({navigation}) => {
                 </View>
                 
             </ScrollView>
-            <View style={{alignItems:'center',justifyContent:'center',flexDirection:'row',marginTop:"15%"}}>
+            <TouchableOpacity style={{alignItems:'center',justifyContent:'center',flexDirection:'row',marginTop:"15%"}} onPress={()=>navigation.replace("login")}>
                     <FontAwesomeIcon icon={faSignOutAlt} size={60*height}/>
                     <View style={{width:20}}/>
                     <Text>Logout</Text>
-            </View>
+            </TouchableOpacity>
         </KeyboardAwareScrollView>
     )
 }
