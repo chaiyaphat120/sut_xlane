@@ -9,8 +9,8 @@ const height = Dimensions.get('window').height/781.3333333333334
 const Profile = ({navigation}) => {
     // <Button title="Click" onPress={()=>navigation.replace("main")}/>
     return (
-        <KeyboardAwareScrollView style={{flex:1}} extraHeight={200} >
-            <ScrollView contentContainerStyle={{flex:1}}  bounces={false}>
+        <KeyboardAwareScrollView style={{flex:1,padding:20}} extraHeight={200} >
+            <ScrollView contentContainerStyle={{flex:1,position:'relative'}}  bounces={false}>
                 <View style={{flex:0.4,alignItems:'center',justifyContent:'center'}}>
                     <View style={{width:width*200,height:width*200,backgroundColor:'pink',borderRadius:width*200}}>
                         <Image style={{flex:1,resizeMode:'cover',borderRadius:width*384}} source={{uri:"https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/09/monkey-d-luffy-wano.jpg?q=50&fit=crop&w=960&h=500&dpr=1.5"}}/>
@@ -19,14 +19,15 @@ const Profile = ({navigation}) => {
                 <View  style={{height:height*250,padding:width*20,alignItems:'center',justifyContent:'space-evenly'}}>
                     <Text>Chaiyaphat Supharak</Text>
                     <Text>Chaiyaphat@gmail.com</Text>
-                    <Text>0943710785452</Text>
+                    <Text style={{fontFamily:'Kanit-Regular'}}>0824512542 สวัสดี</Text>
                 </View>
-                <View style={{alignItems:'center',justifyContent:'center',flexDirection:'row'}}>
+                
+            </ScrollView>
+            <View style={{alignItems:'center',justifyContent:'center',flexDirection:'row',marginTop:"15%"}}>
                     <FontAwesomeIcon icon={faSignOutAlt} size={60*height}/>
                     <View style={{width:20}}/>
                     <Text>Logout</Text>
-                </View>
-            </ScrollView>
+            </View>
         </KeyboardAwareScrollView>
     )
 }

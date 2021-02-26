@@ -26,6 +26,9 @@ const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator()
 
 const Stack1 = ()=>{
+  useEffect(()=>{
+    let fontName = 'Kanit-Regular'
+  },[])
   return(
     <Stack.Navigator >
       <Stack.Screen name="Home" component={Home} options={{headerShown:false}}/>
