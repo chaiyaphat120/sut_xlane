@@ -4,10 +4,24 @@ import { TextInput } from 'react-native-gesture-handler'
 import {height,width} from '../constants'
 
 const SignUp = ({navigation}) => {
-    
+    const [userName, setUserName] = useState('');
+    const [token, setToken] = useState('');
+    const [profilePic, setProfilePic] = useState('');
     const handleSignUp = ()=>{
         navigation.goBack()
     }
+    const getResponseInfo = (error, result) => {
+        if (error) {
+          //Alert for the Error
+          alert('Error fetching data: ' + error.toString());
+        } else {
+          //response alert
+          console.log(JSON.stringify(result));
+          setUserName('Welcome ' + result.name);
+          setToken('User Token: ' + result.id);
+          setProfilePic(result.picture.data.url);
+        }
+      };
     return (
         <SafeAreaView style={{flex:1,padding:20,alignItems:'center',justifyContent:'center'}} extraHeight={200} >
             <Text style={{fontSize:25*height,marginBottom:20*height}}>Wellcome To</Text>

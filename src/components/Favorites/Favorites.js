@@ -7,16 +7,16 @@ import { faHeart} from '@fortawesome/free-solid-svg-icons'
 const STANTDARD = 781
 const Favorites = () => {
     const data = [
-        {id:1,imagUrl:'https://cms.dmpcdn.com/travel/2020/02/27/d42f2130-5947-11ea-996a-0d67e83ef09c_original.JPG',message:"Helloword123465",like:true},
-        {id:2,imagUrl:'https://cms.dmpcdn.com/travel/2020/02/27/d42f2130-5947-11ea-996a-0d67e83ef09c_original.JPG',message:"Helloword123465",like:true},
-        {id:3,imagUrl:'https://cms.dmpcdn.com/travel/2020/02/27/d42f2130-5947-11ea-996a-0d67e83ef09c_original.JPG',message:"Helloword123465",like:false},
-        {id:4,imagUrl:'https://cms.dmpcdn.com/travel/2020/02/27/d42f2130-5947-11ea-996a-0d67e83ef09c_original.JPG',message:"Helloword123465",like:true},
-        {id:6,imagUrl:'https://cms.dmpcdn.com/travel/2020/02/27/d42f2130-5947-11ea-996a-0d67e83ef09c_original.JPG',message:"Helloword123465",like:true},
-        {id:7,imagUrl:'https://cms.dmpcdn.com/travel/2020/02/27/d42f2130-5947-11ea-996a-0d67e83ef09c_original.JPG',message:"Helloword123465",like:true},
-        {id:8,imagUrl:'https://cms.dmpcdn.com/travel/2020/02/27/d42f2130-5947-11ea-996a-0d67e83ef09c_original.JPG',message:"Helloword123465",like:true},
-        {id:9,imagUrl:'https://cms.dmpcdn.com/travel/2020/02/27/d42f2130-5947-11ea-996a-0d67e83ef09c_original.JPG',message:"Helloword123465",like:true},
-        {id:10,imagUrl:'https://cms.dmpcdn.com/travel/2020/02/27/d42f2130-5947-11ea-996a-0d67e83ef09c_original.JPG',message:"Helloword123465",like:true},
-        {id:11,imagUrl:'https://cms.dmpcdn.com/travel/2020/02/27/d42f2130-5947-11ea-996a-0d67e83ef09c_original.JPG',message:"Helloword123465",like:true},
+        {id:1,imagUrl:'https://thumbs.dreamstime.com/z/woman-praying-free-birds-to-nature-sunset-background-woman-praying-free-birds-enjoying-nature-sunset-99680945.jpg',message:"Helloword123465",like:true},
+        {id:2,imagUrl:'https://thumbs.dreamstime.com/z/woman-praying-free-birds-to-nature-sunset-background-woman-praying-free-birds-enjoying-nature-sunset-99680945.jpg',message:"Helloword123465",like:true},
+        {id:3,imagUrl:'https://thumbs.dreamstime.com/z/woman-praying-free-birds-to-nature-sunset-background-woman-praying-free-birds-enjoying-nature-sunset-99680945.jpg',message:"Helloword123465",like:false},
+        {id:4,imagUrl:'https://thumbs.dreamstime.com/z/woman-praying-free-birds-to-nature-sunset-background-woman-praying-free-birds-enjoying-nature-sunset-99680945.jpg',message:"Helloword123465",like:true},
+        {id:6,imagUrl:'https://thumbs.dreamstime.com/z/woman-praying-free-birds-to-nature-sunset-background-woman-praying-free-birds-enjoying-nature-sunset-99680945.jpg',message:"Helloword123465",like:true},
+        {id:7,imagUrl:'https://thumbs.dreamstime.com/z/woman-praying-free-birds-to-nature-sunset-background-woman-praying-free-birds-enjoying-nature-sunset-99680945.jpg',message:"Helloword123465",like:true},
+        {id:8,imagUrl:'https://thumbs.dreamstime.com/z/woman-praying-free-birds-to-nature-sunset-background-woman-praying-free-birds-enjoying-nature-sunset-99680945.jpg',message:"Helloword123465",like:true},
+        {id:9,imagUrl:'https://thumbs.dreamstime.com/z/woman-praying-free-birds-to-nature-sunset-background-woman-praying-free-birds-enjoying-nature-sunset-99680945.jpg',message:"Helloword123465",like:true},
+        {id:10,imagUrl:'https://thumbs.dreamstime.com/z/woman-praying-free-birds-to-nature-sunset-background-woman-praying-free-birds-enjoying-nature-sunset-99680945.jpg',message:"Helloword123465",like:true},
+        {id:11,imagUrl:'https://thumbs.dreamstime.com/z/woman-praying-free-birds-to-nature-sunset-background-woman-praying-free-birds-enjoying-nature-sunset-99680945.jpg',message:"Helloword123465",like:true},
     ]
     return (
         <SafeAreaView style={{flex:1,padding:width*20}}>
