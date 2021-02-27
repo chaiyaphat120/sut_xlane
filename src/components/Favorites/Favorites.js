@@ -7,16 +7,16 @@ import { faHeart} from '@fortawesome/free-solid-svg-icons'
 const STANTDARD = 781
 const Favorites = () => {
     const data = [
-        {id:1,imagUrl:'https://thumbs.dreamstime.com/z/woman-praying-free-birds-to-nature-sunset-background-woman-praying-free-birds-enjoying-nature-sunset-99680945.jpg',message:"Helloword123465",like:true},
-        {id:2,imagUrl:'https://thumbs.dreamstime.com/z/woman-praying-free-birds-to-nature-sunset-background-woman-praying-free-birds-enjoying-nature-sunset-99680945.jpg',message:"Helloword123465",like:true},
-        {id:3,imagUrl:'https://thumbs.dreamstime.com/z/woman-praying-free-birds-to-nature-sunset-background-woman-praying-free-birds-enjoying-nature-sunset-99680945.jpg',message:"Helloword123465",like:false},
-        {id:4,imagUrl:'https://thumbs.dreamstime.com/z/woman-praying-free-birds-to-nature-sunset-background-woman-praying-free-birds-enjoying-nature-sunset-99680945.jpg',message:"Helloword123465",like:true},
-        {id:6,imagUrl:'https://thumbs.dreamstime.com/z/woman-praying-free-birds-to-nature-sunset-background-woman-praying-free-birds-enjoying-nature-sunset-99680945.jpg',message:"Helloword123465",like:true},
-        {id:7,imagUrl:'https://thumbs.dreamstime.com/z/woman-praying-free-birds-to-nature-sunset-background-woman-praying-free-birds-enjoying-nature-sunset-99680945.jpg',message:"Helloword123465",like:true},
-        {id:8,imagUrl:'https://thumbs.dreamstime.com/z/woman-praying-free-birds-to-nature-sunset-background-woman-praying-free-birds-enjoying-nature-sunset-99680945.jpg',message:"Helloword123465",like:true},
-        {id:9,imagUrl:'https://thumbs.dreamstime.com/z/woman-praying-free-birds-to-nature-sunset-background-woman-praying-free-birds-enjoying-nature-sunset-99680945.jpg',message:"Helloword123465",like:true},
-        {id:10,imagUrl:'https://thumbs.dreamstime.com/z/woman-praying-free-birds-to-nature-sunset-background-woman-praying-free-birds-enjoying-nature-sunset-99680945.jpg',message:"Helloword123465",like:true},
-        {id:11,imagUrl:'https://thumbs.dreamstime.com/z/woman-praying-free-birds-to-nature-sunset-background-woman-praying-free-birds-enjoying-nature-sunset-99680945.jpg',message:"Helloword123465",like:true},
+        {id:1,imagUrl:'https://www.theriver-condo.com/wp-content/uploads/2015/04/The-River-Bangkok-condo-for-rent-1.jpg',message:"Helloword123465",like:true},
+        {id:2,imagUrl:'https://www.theriver-condo.com/wp-content/uploads/2015/04/The-River-Bangkok-condo-for-rent-1.jpg',message:"Helloword123465",like:true},
+        {id:3,imagUrl:'https://www.theriver-condo.com/wp-content/uploads/2015/04/The-River-Bangkok-condo-for-rent-1.jpg',message:"Helloword123465",like:false},
+        {id:4,imagUrl:'https://www.theriver-condo.com/wp-content/uploads/2015/04/The-River-Bangkok-condo-for-rent-1.jpg',message:"Helloword123465",like:true},
+        {id:6,imagUrl:'https://www.theriver-condo.com/wp-content/uploads/2015/04/The-River-Bangkok-condo-for-rent-1.jpg',message:"Helloword123465",like:true},
+        {id:7,imagUrl:'https://www.theriver-condo.com/wp-content/uploads/2015/04/The-River-Bangkok-condo-for-rent-1.jpg',message:"Helloword123465",like:true},
+        {id:8,imagUrl:'https://www.theriver-condo.com/wp-content/uploads/2015/04/The-River-Bangkok-condo-for-rent-1.jpg',message:"Helloword123465",like:true},
+        {id:9,imagUrl:'https://www.theriver-condo.com/wp-content/uploads/2015/04/The-River-Bangkok-condo-for-rent-1.jpg',message:"Helloword123465",like:true},
+        {id:10,imagUrl:'https://www.theriver-condo.com/wp-content/uploads/2015/04/The-River-Bangkok-condo-for-rent-1.jpg',message:"Helloword123465",like:true},
+        {id:11,imagUrl:'https://www.theriver-condo.com/wp-content/uploads/2015/04/The-River-Bangkok-condo-for-rent-1.jpg',message:"Helloword123465",like:true},
     ]
     return (
         <SafeAreaView style={{flex:1,padding:width*20}}>
@@ -34,7 +34,7 @@ const Favorites = () => {
                                                 <FontAwesomeIcon color="red" icon={faHeart}/>
                                             </View>
                                         </ImageBackground>
-                                        <Text>fdsfdsfdsfdsf</Text>
+                                        <Text>Condo 3ห้องน้ำ 1 ห้องนอน เดือนละ 200 บาท</Text>
                                     </View>
                                 ):(
                                     null
@@ -55,7 +55,7 @@ const Favorites = () => {
                                                     <FontAwesomeIcon color="red" icon={faHeart}/>
                                                 </View>
                                             </ImageBackground>
-                                            <Text>fdsfdsfdsfdsf</Text>
+                                            <Text>Condo 3ห้องน้ำ 1 ห้องนอน เดือนละ 200 บาท</Text>
                                         </View>
                                     ):(
                                         null

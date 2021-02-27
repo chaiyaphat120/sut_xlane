@@ -1,8 +1,8 @@
 import React, { useState,useCallback } from 'react'
-import { View, Text ,SafeAreaView, Dimensions ,Switch ,TouchableOpacity} from 'react-native'
+import { View, Text ,SafeAreaView, Dimensions ,Switch ,TouchableOpacity, ScrollView} from 'react-native'
 import DropDownPicker from 'react-native-dropdown-picker';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faAngleLeft,faBath ,faSearch} from '@fortawesome/free-solid-svg-icons'
+import { faAngleLeft,faBath ,faSearch ,faUser} from '@fortawesome/free-solid-svg-icons'
 import MultiSlider from '@ptomasroos/react-native-multi-slider';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 const Filter = ({navigation}) => {
@@ -27,17 +27,17 @@ const Filter = ({navigation}) => {
                 <FontAwesomeIcon icon={faAngleLeft} size={width*40}/>
                 <Text style={{fontSize:RFValue(20,STANTDARD)}}>Back</Text>
             </TouchableOpacity>
-            <View style={{justifyContent:'center',alignItems:'center',paddingHorizontal:50*width,paddingVertical:20*height,backgroundColor:'#22223b',margin:10,borderRadius:10*height}}>
+            <View style={{justifyContent:'center',alignItems:'center',paddingHorizontal:30*width,paddingVertical:6*height,backgroundColor:'#22223b',margin:10,borderRadius:10*height}}>
                 <Text style={{fontSize:RFValue(30,STANTDARD),color:'#fff',fontWeight:'bold'}}>Filter</Text>
             </View>
-            <View style={{flexDirection:'row',justifyContent:'space-between',width:"80%"}}>
+            <View style={{flexDirection:'row',justifyContent:'space-between',width:"80%",alignItems:'center' ,height:40*height,marginTop:"5%"}}>
                 <Text style={{textAlignVertical:'center'}}>Listing Type</Text>
                 <DropDownPicker
                     items={[
-                        {label: 'ALL', value: 'all'},
-                        {label: 'SALE', value: 'sale', icon: () => <FontAwesomeIcon icon={faBath} />},
-                        {label: 'RENT', value: 'rent', icon: () => <FontAwesomeIcon icon={faBath} />},
-                    ]}
+                        {label: 'All', value: 'all'},
+                        {label: 'Sale', value: 'sale'},
+                        {label: 'Rent', value: 'rent'},
+                      ]}
                     defaultValue={listingType}
                     containerStyle={{height: height*50,width:"50%"}}
                     style={{backgroundColor: '#fafafa'}}
@@ -49,14 +49,14 @@ const Filter = ({navigation}) => {
                 />
                 
             </View>
-            <View style={{flexDirection:'row',width:"80%",justifyContent:'space-between',alignItems:'center'}}>
-                <Text>Listing Type</Text>
+            <View style={{flexDirection:'row',width:"80%",justifyContent:'space-between',alignItems:'center',height:40*height ,marginTop:"5%"}}>
+                <Text>Property Type</Text>
                 <DropDownPicker
                     items={[
                         {label: 'All', value: 'all'},
-                        {label: 'USA', value: 'usa', icon: () => <FontAwesomeIcon icon={faBath} />},
-                        {label: 'UK', value: 'uk', icon: () => <FontAwesomeIcon icon={faBath} />},
-                        {label: 'France', value: 'france', icon: () => <FontAwesomeIcon icon={faBath} />},
+                        {label: 'Condo', value: 'condo'},
+                        {label: 'House', value: 'house'},
+                        {label: 'Apartment', value: 'apartment'},
                     ]}
                         defaultValue={propertyType}
                         containerStyle={{height: 40,width:"50%"}}
@@ -135,7 +135,7 @@ const Filter = ({navigation}) => {
                     <Text>6+</Text>
                 </View>
             </View>
-            <Text style={{textAlign:'left',width:"80%",marginTop:"3%",fontSize:20*width,color:'tomato'}}>Amenities</Text>
+            <Text style={{textAlign:'left',width:"80%",marginTop:"3%",fontSize:20*width,color:'tomato'}}>Facilities</Text>
             <View style={{width:"80%",justifyContent:'space-between',alignItems:'center',flexDirection:'row',marginTop:'1%'}}>
                 <Text>Car parking</Text>
                 <Switch
@@ -147,7 +147,7 @@ const Filter = ({navigation}) => {
                 />
             </View>
             <View style={{width:"80%",justifyContent:'space-between',alignItems:'center',flexDirection:'row',marginTop:'2.5%'}}>
-                <Text>Car parking</Text>
+                <Text>Smining pool</Text>
                 <Switch
                     trackColor={{ false: "#767577", true: "#81b0ff" }}
                     thumbColor={isEnabled2 ? "#f5dd4b" : "#f4f3f4"}

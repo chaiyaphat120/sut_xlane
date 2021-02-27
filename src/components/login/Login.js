@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect  ,useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { View, Text , Dimensions,StyleSheet, Image, SafeAreaView, TouchableOpacity ,Modal, ActivityIndicator ,TextInput} from 'react-native'
 // Import FBSDK
 import {
@@ -12,7 +12,8 @@ import {
 import { useSelector,useDispatch } from 'react-redux';
 import {fecthDataUserAction ,fecthTokenFacebookAction} from '../../slice/dataUser'
 import {height,width} from '../constants'
-
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+const STANTDARD = 781
 const login = ({navigation}) => {
     const [userName, setUserName] = useState('');
     const [token, setToken] = useState('');
@@ -81,18 +82,18 @@ const login = ({navigation}) => {
             <Image source={require('../../picture/logo.png')} style={{width:width*150,height:width*150,resizeMode:'contain'}} />
 
             <View style={{width:20,height:20*height}}/>
-            <TextInput placeholder="Username / email" style={{fontSize:20*height,backgroundColor:'white',width:"80%"}}/>
+            <TextInput placeholder="Username / email" style={{fontSize:RFValue(20,STANTDARD),backgroundColor:'white',width:"80%"}}/>
 
             <View style={{width:20,height:20*height}}/>
-            <TextInput placeholder="Password" style={{fontSize:20*height,backgroundColor:'white',width:"80%"}}/>
+            <TextInput placeholder="Password" style={{fontSize:RFValue(20,STANTDARD),backgroundColor:'white',width:"80%"}}/>
 
             <View style={{width:20,height:20*height}}/>
-            <TouchableOpacity onPress={handleSignIn}  style={{width:width*220,height:50*height,backgroundColor:'red',marginTop:"5%",alignItems:'center',justifyContent:'center',backgroundColor:'#2c3949',borderRadius:30/2*height}}><Text style={{fontSize:20*height,color:'white'}}>Login</Text></TouchableOpacity>
-            <TouchableOpacity onPress={handleSignUp} style={{width:width*220,height:50*height,backgroundColor:'red',marginTop:"5%",alignItems:'center',justifyContent:'center',backgroundColor:'white',borderRadius:65/2*height}}><Text style={{fontSize:20*height,color:"#2c3949"}}>SignUp</Text></TouchableOpacity>
+            <TouchableOpacity onPress={handleSignIn}  style={{width:width*220,height:45*height,backgroundColor:'red',marginTop:"5%",alignItems:'center',justifyContent:'center',backgroundColor:'#2c3949',borderRadius:30/2*height}}><Text style={{fontSize:RFValue(20,STANTDARD),color:'white'}}>Login</Text></TouchableOpacity>
+            <TouchableOpacity onPress={handleSignUp} style={{width:width*220,height:45*height,backgroundColor:'red',marginTop:"5%",alignItems:'center',justifyContent:'center',backgroundColor:'white',borderRadius:65/2*height}}><Text style={{fontSize:RFValue(20,STANTDARD),color:"#2c3949"}}>SignUp</Text></TouchableOpacity>
             
-            <TouchableOpacity onPress={loginWithFacebook}>
+            {/* <TouchableOpacity onPress={loginWithFacebook}>
               <Image source={require('../../picture/Facebook.gif')} style={{width:50*width,height:50*width,marginTop:10}}/>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
         </SafeAreaView>
     )
 }

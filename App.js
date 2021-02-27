@@ -9,7 +9,7 @@ import RNBootSplash from "react-native-bootsplash";
 import Login from './src/components/login/Login'
 
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import {  faHome , faPlusCircle, faMapMarker ,faHeart ,faIdCard} from '@fortawesome/free-solid-svg-icons'
+import {  faHome , faPlusCircle, faMapMarker ,faHeart ,faUser} from '@fortawesome/free-solid-svg-icons'
 
 import Home from './src/components/Home/Home';
 import DetailHome from './src/components/Home/DetailHome';
@@ -20,6 +20,7 @@ import Profiles from './src/components/Profiles/Profiles';
 import SignUp from './src/components/login/SignUp';
 import Favorites from './src/components/Favorites/Favorites';
 import AddProperty from './src/components/AddProperty/AddProperty';
+import EditProperty from './src/components/AddProperty/EditProperty';
 
 
 const Tab = createBottomTabNavigator();
@@ -34,6 +35,7 @@ const Stack1 = ()=>{
       <Stack.Screen name="Home" component={Home} options={{headerShown:false}}/>
       <Stack.Screen name="DetailHome" component={DetailHome} options={{headerShown:false}}/>
       <Stack.Screen name="Filter" component={Filter} options={{headerShown:false}}/>
+      <Stack.Screen name="EditProperty" component={EditProperty} options={{headerShown:false}}/>
     </Stack.Navigator>
   )
 }
@@ -93,7 +95,7 @@ const TabSctack =()=>{
         options={{
           tabBarLabel: 'Profiles',
           tabBarIcon: ({ color, size }) => (
-            <FontAwesomeIcon icon={faIdCard}  color={color} size={size}/>
+            <FontAwesomeIcon icon={faUser}  color={color} size={size}/>
           ),
         }}
       />

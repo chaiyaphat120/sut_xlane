@@ -6,8 +6,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faCamera ,faFolderOpen ,faAngleLeft,faBan } from '@fortawesome/free-solid-svg-icons'
 import {v4 as uuidv4} from 'uuid'
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+import { NavigationHelpersContext } from '@react-navigation/native';
 const STANTDARD = 781
-const AddProperty = ()=> {
+const EditProperty = ({navigation})=> {
   const [listingType ,setListingType] = useState('all')
   const [propertyType ,setPropertyType] = useState('all')
   const [prices , setPrices] = useState('')
@@ -70,17 +71,17 @@ const AddProperty = ()=> {
     return (
       <SafeAreaView style={{flex:1,padding:20}}>
         <View style={{width:"100%",flexDirection:'row',borderBottomWidth:1}}>
-          <View style={{height:height*40,width:"50%",paddingBottom:5*height ,alignItems:'center',justifyContent:'flex-start',flexDirection:'row',marginBottom:20}}>
+          <TouchableOpacity onPress={()=>navigation.goBack("")}style={{height:height*40,width:"50%",paddingBottom:5*height ,alignItems:'center',justifyContent:'flex-start',flexDirection:'row',marginBottom:20}}>
             <FontAwesomeIcon icon={faAngleLeft} size={width*40}/>
             <Text style={{fontSize:width*20}}>Back</Text>
-          </View>
+          </TouchableOpacity>
           <TouchableOpacity style={{height:height*40,width:"50%",paddingBottom:5*height ,alignItems:'center',justifyContent:'flex-end',flexDirection:'row',marginBottom:20}}>
             <FontAwesomeIcon icon={faBan} size={width*30} color="tomato"/>
             <Text style={{fontSize:width*20,color:'tomato'}}>Cancel</Text>
           </TouchableOpacity>
         </View>
           <View style={{width:"100%",height:30*height,marginBottom:10,alignItems:'center',justifyContent:'center'}}>
-          <Text style={{fontSize:RFValue(20,STANTDARD),fontWeight:'bold'}}>Add Property</Text>
+          <Text style={{fontSize:RFValue(20,STANTDARD),fontWeight:'bold'}}>Edit Property</Text>
           </View>
         <ScrollView>
           <View style={{minHeight:height*300}}>
@@ -224,8 +225,8 @@ const AddProperty = ()=> {
             </View>
 
             <View style={{width:"100%",flexDirection:'row',alignItems:'center',justifyContent:'space-between'}}>
-              <Text>Email</Text>
-              <TextInput onChangeText={(e)=>setEmail(e)} value={email}  style={{width:"70%",backgroundColor:'white',borderRadius:10,marginTop:10}}/>
+                <Text>Email</Text>
+                <TextInput onChangeText={(e)=>setEmail(e)} value={email}  style={{width:"70%",backgroundColor:'white',borderRadius:10,marginTop:10}}/>
             </View>
 
           </View>
@@ -236,4 +237,4 @@ const AddProperty = ()=> {
       </SafeAreaView>
     );
 }
-export default AddProperty
+export default EditProperty
