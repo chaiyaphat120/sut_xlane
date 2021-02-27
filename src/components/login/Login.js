@@ -78,7 +78,7 @@ const login = ({navigation}) => {
 
     return (
         <SafeAreaView style={{flex:1,padding:20,alignItems:'center',justifyContent:'center'}} extraHeight={200} >
-            <Text style={{fontSize:25*height,marginBottom:20*height}}>Wellcome To</Text>
+            <Text style={{fontSize:25*height,marginBottom:20*height}}>Welcome To</Text>
             <Image source={require('../../picture/logo.png')} style={{width:width*150,height:width*150,resizeMode:'contain'}} />
 
             <View style={{width:20,height:20*height}}/>

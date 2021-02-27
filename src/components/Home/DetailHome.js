@@ -23,7 +23,7 @@ const DetailHome = ({navigation}) => {
                 <Text style={{fontSize:width*20}}>Back</Text>
             </TouchableOpacity>
             <View style={{height:250*height,alignItems:'center',marginBottom:20*height}}>
-                <Image source={{uri:'https://www.tqm.co.th/gallery/3637.jpg'}} style={{width:"90%",height:"100%",resizeMode:'cover'}}/>
+                <Image source={{uri:'https://sg2-cdn.pgimgs.com/developer-listing/4370109/OUPHO.122053829.V800/Grene-Condo-Donmueang-Songprapha-Don-Mueang-Thailand.jpg'}} style={{width:"90%",height:"100%",resizeMode:'cover'}}/>
             </View>
             <ScrollView>
                 <View style={{width:width - 40,marginLeft:20,flex:0.5,marginTop:10}}>

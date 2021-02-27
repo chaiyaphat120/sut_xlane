@@ -7,6 +7,8 @@ import { faCamera ,faFolderOpen ,faAngleLeft,faBan } from '@fortawesome/free-sol
 import {v4 as uuidv4} from 'uuid'
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import { NavigationHelpersContext } from '@react-navigation/native';
+import {settingSelectionMenuHomeAction} from '../../slice/configNavogationSlice'
+import {useDispatch} from 'react-redux'
 const STANTDARD = 781
 const EditProperty = ({navigation})=> {
   const [listingType ,setListingType] = useState('all')
@@ -22,7 +24,7 @@ const EditProperty = ({navigation})=> {
 
   const width = Dimensions.get('window').width/384
   const height = Dimensions.get('window').height/781.3333333333334
-
+  const dispatch = useDispatch()
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
   const [isEnabled2, setIsEnabled2] = useState(false);
@@ -67,7 +69,12 @@ const EditProperty = ({navigation})=> {
         text
       );
   }
-
+  const handleSave = () =>{
+    console.log("save");
+    dispatch(settingSelectionMenuHomeAction('my-property'))  //property-news
+    navigation.goBack()
+    
+  }
     return (
       <SafeAreaView style={{flex:1,padding:20}}>
         <View style={{width:"100%",flexDirection:'row',borderBottomWidth:1}}>
@@ -107,7 +114,7 @@ const EditProperty = ({navigation})=> {
             </View>
             
             <View style={{flexDirection:'row',width:"100%",justifyContent:'space-between',alignItems:'center',marginTop:"5%"}}>
-              <Text>Listing Type</Text>
+              <Text>Property type</Text>
               <DropDownPicker
                 items={[
                   {label: 'All', value: 'all'},
@@ -231,7 +238,7 @@ const EditProperty = ({navigation})=> {
 
           </View>
         </ScrollView>
-        <TouchableOpacity style={{width:"100%",height:50*height,backgroundColor:'#43aa8b',marginTop:10,alignItems:'center',justifyContent:'center',borderRadius:10}}>
+        <TouchableOpacity onPress={handleSave} style={{width:"100%",height:50*height,backgroundColor:'#43aa8b',marginTop:10,alignItems:'center',justifyContent:'center',borderRadius:10}}>
           <Text style={{color:'white'}}>SAVE</Text>
         </TouchableOpacity>
       </SafeAreaView>

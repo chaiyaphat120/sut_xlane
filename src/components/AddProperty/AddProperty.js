@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faCamera ,faFolderOpen ,faAngleLeft,faBan } from '@fortawesome/free-solid-svg-icons'
 import {v4 as uuidv4} from 'uuid'
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+import { useSelector,useDispatch } from 'react-redux';
+import {settingSelectionMenuHomeAction} from '../../slice/configNavogationSlice'
 const STANTDARD = 781
 const AddProperty = ()=> {
   const [listingType ,setListingType] = useState('all')
@@ -18,6 +20,7 @@ const AddProperty = ()=> {
   const [locations,setLocations] = useState('')
   const [telephone,setTelephone] = useState('')
   const [email,setEmail] = useState('')
+  const dispatch = useDispatch()
 
   const width = Dimensions.get('window').width/384
   const height = Dimensions.get('window').height/781.3333333333334
@@ -66,7 +69,12 @@ const AddProperty = ()=> {
         text
       );
   }
-
+    const handleSave = () =>{
+      console.log("save");
+      // dispatch(settingSelectionMenuHomeAction('my-property'))
+      navigator.replace("home")
+      
+    }
     return (
       <SafeAreaView style={{flex:1,padding:20}}>
         <View style={{width:"100%",flexDirection:'row',borderBottomWidth:1}}>
@@ -106,7 +114,7 @@ const AddProperty = ()=> {
             </View>
             
             <View style={{flexDirection:'row',width:"100%",justifyContent:'space-between',alignItems:'center',marginTop:"5%"}}>
-              <Text>Listing Type</Text>
+              <Text>Property type</Text>
               <DropDownPicker
                 items={[
                   {label: 'All', value: 'all'},
@@ -230,7 +238,7 @@ const AddProperty = ()=> {
 
           </View>
         </ScrollView>
-        <TouchableOpacity style={{width:"100%",height:50*height,backgroundColor:'#43aa8b',marginTop:10,alignItems:'center',justifyContent:'center',borderRadius:10}}>
+        <TouchableOpacity onPress={handleSave} style={{width:"100%",height:50*height,backgroundColor:'#43aa8b',marginTop:10,alignItems:'center',justifyContent:'center',borderRadius:10}}>
           <Text style={{color:'white'}}>SAVE</Text>
         </TouchableOpacity>
       </SafeAreaView>

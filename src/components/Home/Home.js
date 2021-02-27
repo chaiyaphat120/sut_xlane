@@ -8,9 +8,13 @@ import { faBed,faBath ,faSearch,faSlidersH ,faEdit} from '@fortawesome/free-soli
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import {userValue} from '../../slice/usersSlice'
 import {height,width} from '../constants'
+import {settingSelectionMenuHomeValue ,settingSelectionMenuHomeAction} from '../../slice/configNavogationSlice'
+
 const Home = ({navigation}) => {
     const userState= useSelector(userValue)
+    const dispatch = useDispatch()
     const [menu , setMenu] = useState("property-news")  //my-property
+    const settingSelectionMenuHome = useSelector(settingSelectionMenuHomeValue)
     const dataImageShow = ()=>{
         return(
             userState.map(e=>{
@@ -47,13 +51,13 @@ const Home = ({navigation}) => {
                 </Swiper>
             </View>
             <View style={styles.detail}>
-                {menu === "property-news" ?(
+                {settingSelectionMenuHome.selectionHome === "property-news" ?(
                     <React.Fragment>
                         <View style={{width:"100%",height:30*height,flexDirection:'row',justifyContent:'space-between'}}>
                             <TouchableOpacity style={{width:"50%",backgroundColor:'white',borderWidth:1,padding:10,alignItems:'center',justifyContent:'center',borderBottomWidth:1,borderBottomColor:'white'}} >
                                 <Text style={{...styles.text1,fontWeight:'bold'}}>Property News</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style={{width:"50%",padding:10,alignItems:'center',justifyContent:'center',borderBottomWidth:1,borderBottomColor:'white'}} onPress={()=>setMenu('my-property')}>
+                            <TouchableOpacity style={{width:"50%",padding:10,alignItems:'center',justifyContent:'center',borderBottomWidth:1,borderBottomColor:'white'}} onPress={()=>dispatch(settingSelectionMenuHomeAction('my-property'))}>
                                 <Text style={{...styles.text1,fontWeight:'bold',color:'grey'}}>My Property</Text>
                             </TouchableOpacity>
                         </View>
@@ -155,10 +159,10 @@ const Home = ({navigation}) => {
                 ):(
                     <React.Fragment>
                         <View style={{width:"100%",height:30*height,flexDirection:'row',justifyContent:'space-between'}}>
-                            <TouchableOpacity style={{width:"50%",padding:10,alignItems:'center',justifyContent:'center',borderBottomWidth:2,borderBottomColor:'white'}} onPress={()=>setMenu('property-news')}>
+                            <TouchableOpacity style={{width:"50%",padding:10,alignItems:'center',justifyContent:'center',borderBottomWidth:2,borderBottomColor:'white'}} onPress={()=>dispatch(settingSelectionMenuHomeAction('property-news')) }>
                                 <Text style={{...styles.text1,fontWeight:'bold',color:'grey'}}>Property News</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style={{width:"50%",padding:10,alignItems:'center',borderWidth:1,justifyContent:'center',borderBottomWidth:1,borderBottomColor:'white'}} onPress={()=>setMenu('my-property')}>
+                            <TouchableOpacity style={{width:"50%",padding:10,alignItems:'center',borderWidth:1,justifyContent:'center',borderBottomWidth:1,borderBottomColor:'white'}} >
                                 <Text style={{...styles.text1,fontWeight:'bold'}}>My Property</Text>
                             </TouchableOpacity>
                         </View>

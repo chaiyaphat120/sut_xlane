@@ -93,7 +93,7 @@ const TabSctack =()=>{
         name="Profiles"
         component={Profiles}
         options={{
-          tabBarLabel: 'Profiles',
+          tabBarLabel: 'Profile',
           tabBarIcon: ({ color, size }) => (
             <FontAwesomeIcon icon={faUser}  color={color} size={size}/>
           ),
